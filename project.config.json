@@ -1,7 +1,7 @@
 {
   "appid": "wxbaf6076fb5b3df0d",
   "compileType": "miniprogram",
-  "libVersion": "trial",
+  "libVersion": "2.12.0",
   "packOptions": {
     "ignore": [],
     "include": []
@@ -14,6 +14,8 @@
     "enhance": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmRelationList": [],
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

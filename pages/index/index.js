@@ -1,66 +1,62 @@
-// pages/index/index.js
+const normalCallout = {
+  id: 1,
+  latitude: 31.32106708723145, 
+  longitude: 120.71278828233082,
+  iconPath: '/image/location.png',
+  callout: {
+    content: '尚层装饰',
+    color: '#EA0000',
+    fontSize: 14,
+    borderWidth: 0,
+    borderRadius: 0,
+    borderColor: '#000000',
+    bgColor: '#fff',
+    padding: 5,
+    display: 'ALWAYS',
+    textAlign: 'center'
+  },
+  // label: {
+  //   content: 'label 文本',
+  //   fontSize: 24,
+  //   textAlign: 'center',
+  //   borderWidth: 1,
+  //   borderRadius: 5,
+  //   bgColor: '#fff',
+  //   padding: 5
+  // }
+}
+
+
+const allMarkers = [normalCallout]
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    latitude: 31.32121, 
+    longitude: 120.71277,
+    markers: [normalCallout],
+    customCalloutMarkerIds: [],
+    num: 1
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onReady: function (e) {
+    this.mapCtx = wx.createMapContext('myMap')
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  addMarker() {
+    const markers = allMarkers
+    this.setData({
+      markers,
+      customCalloutMarkerIds: [2,3,4],
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  markertap(e) {
+    console.log('@@@ markertap', e)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  callouttap(e) {
+    console.log('@@@ callouttap', e)
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  labeltap(e) {
+    console.log('@@@ labeltap', e)
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
 })
